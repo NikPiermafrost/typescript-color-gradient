@@ -88,7 +88,11 @@ export class Gradient {
 
   private setColors(colors: string[]): void {
     if (colors.length < 2) {
-      throw new Error('At least 2 colors are needed');
+      throw new RangeError('At least 2 colors are needed');
+    }
+
+    if (colors.some((color) => !color)) {
+      throw new Error('All colors must be defined and/or not empty');
     }
 
     const increment = (this.maxNum) / (colors.length - 1);

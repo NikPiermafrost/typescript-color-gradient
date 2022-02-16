@@ -11,16 +11,16 @@
 
 ## Installation
 
-For Node.js: Install the `javascript-color-gradient` npm module:
+For Node.js: Install the `typescript-color-gradient` npm module:
 
 ```bash
-npm install javascript-color-gradient
+npm install typescript-color-gradient
 ```
 
 Then import the module into your JavaScript:
 
 ```javascript
-import colorGradient from "javascript-color-gradient";
+import { Gradient } from "typescript-color-gradient";
 ```
 
 ## Demo
