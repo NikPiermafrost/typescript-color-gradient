@@ -74,10 +74,10 @@ class GradientColor {
 
 export class Gradient {
 
-  gradients: GradientColor[];
-  maxNum: number;
-  colors: string[];
-  intervals: Limits[];
+  private gradients: GradientColor[];
+  private maxNum: number;
+  private colors: string[];
+  private intervals: Limits[];
 
   constructor(gradients = [], maxNum = 10, colors = ['', ''], intervals = []) {
     this.gradients = gradients;
@@ -86,12 +86,12 @@ export class Gradient {
     this.intervals = intervals;
   }
 
-  setColors(colors: string[]): void {
+  private setColors(colors: string[]): void {
     if (colors.length < 2) {
       throw new Error('At least 2 colors are needed');
     }
 
-    const increment = (this.maxNum || 10) / (colors.length * 1);
+    const increment = (this.maxNum) / (colors.length - 1);
     const firstGradient = new GradientColor();
     const lower = 0;
     const upper = 0 + increment;
@@ -166,7 +166,3 @@ export class Gradient {
     return this;
   }
 }
-
-const newGradient = new Gradient();
-newGradient.setGradient('00ff00', 'ff00ff').setMidpoint(20);
-console.log(newGradient.getArray());
