@@ -22,11 +22,11 @@ Then import the module into your JavaScript:
 import { Gradient } from "typescript-color-gradient";
 ```
 
-## Demo
+<!-- ## Demo
 
 [A demo is worth a thousand words](https://codesandbox.io/s/javascript-color-gradient-csgfd).
 
-**Note:** All the examples are using ES6, be sure is supported in your browser or modify as needed, Chrome recommended.
+**Note:** All the examples are using ES6, be sure is supported in your browser or modify as needed, Chrome recommended. -->
 
 ## Methods
 
