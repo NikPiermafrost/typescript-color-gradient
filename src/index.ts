@@ -26,11 +26,11 @@ class GradientColor {
     return color.substring(color.length - 6, color.length);
   }
 
-  setMidpoint (minNumber: number, maxNumber: number) {
+  setMidpoint(minNumber: number, maxNumber: number) {
     this.minNum = minNumber;
     this.maxNum = maxNumber;
   }
-    
+
   getColor(numberValue: number): string {
     if (!numberValue) {
       throw new Error('Could not get a color, the numeric value is undefined or null');
@@ -54,7 +54,7 @@ class GradientColor {
       )
     );
   }
-    
+
   generateHex(numberValue: number, start: string, end: string) {
     if (numberValue < this.minNum) {
       numberValue = this.minNum;
@@ -79,7 +79,7 @@ export class Gradient {
   private maxNum: number;
   private colors: string[];
   private intervals: Limits[];
-  
+
   constructor() {
     this.gradients = [];
     this.maxNum = 10;
@@ -127,11 +127,21 @@ export class Gradient {
     this.colors = colors;
   }
 
+
+  /**
+   * sets all the colors to generate a gradient.
+   * @param {string[]} gradients the hex colors from which the gradient is generated.
+   * @returns {Gradient} for method chaining.
+   */
   setGradient(...gradients: string[]): Gradient {
     this.setColors(gradients);
     return this;
   }
 
+  /**
+   * sets all the colors to generate a gradient.
+   * @returns {string[]} the array of generated hex colors.
+   */
   getArray(): string[] {
     const gradientArray: string[] = [];
 
@@ -150,7 +160,13 @@ export class Gradient {
     return gradientArray;
   }
 
-  getColor(numberValue: number) {
+  /**
+   * sets all the colors to generate a gradient.
+   * @param {number} numberValue the 1 start index of the color array. Thus i don't really like it,
+   * the original author made it like this so i left it as is.
+   * @returns {string} the desired color from the gradient array.
+   */
+  getColor(numberValue: number): string {
     if (isNaN(numberValue)) {
       throw new TypeError('getColor should be a number');
     }
@@ -165,7 +181,12 @@ export class Gradient {
     return this.gradients[index].getColor(numberValue);
   }
 
-  setMidpoint (maxNumber: number): Gradient {
+  /**
+   * sets all the colors to generate a gradient.
+   * @param {number} maxNumber The number of colors generated from the gradient.
+   * @returns {Gradient} for method chaining.
+   */
+  setMidpoint(maxNumber: number): Gradient {
     if (isNaN(maxNumber)) {
       throw new RangeError('midPoint should be a number');
     }
