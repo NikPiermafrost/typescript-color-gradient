@@ -177,6 +177,3 @@ export class Gradient {
     return this;
   }
 }
-
-const gradient = new Gradient();
-console.log(gradient.setGradient('#00ff00', '#ff00ff').setMidpoint(20).getArray());
