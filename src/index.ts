@@ -4,17 +4,13 @@ interface Limits {
 }
 
 class GradientColor {
-  startColor: string;
-  endColor: string;
-  minNum: number;
-  maxNum: number;
 
-  constructor(startColor = '', endColor = '', minNum = 0, maxNum = 10) {
-    this.startColor = startColor;
-    this.maxNum = maxNum;
-    this.endColor = endColor;
-    this.minNum = minNum;
-  }
+  constructor(
+    private startColor = '', 
+    private endColor = '', 
+    private minNum = 0, 
+    private maxNum = 10
+  ) { }
 
   setGradient(colorStart: string, colorEnd: string) {
     this.startColor = this.getHexColor(colorStart);
@@ -74,17 +70,12 @@ class GradientColor {
 
 export class Gradient {
 
-  private gradients: GradientColor[];
-  private maxNum: number;
-  private colors: string[];
-  private intervals: Limits[];
-
-  constructor(gradients = [], maxNum = 10, colors = ['', ''], intervals = []) {
-    this.gradients = gradients;
-    this.maxNum = maxNum;
-    this.colors = colors;
-    this.intervals = intervals;
-  }
+  constructor(
+    private gradients: GradientColor[] = [], 
+    private maxNum = 10, 
+    private colors: string[] = ['', ''], 
+    private intervals: Limits[] = []
+  ) { }
 
   private setColors(colors: string[]): void {
     if (colors.length < 2) {
@@ -99,15 +90,17 @@ export class Gradient {
     const firstGradient = new GradientColor();
     const lower = 0;
     const upper = 0 + increment;
+
     firstGradient.setGradient(colors[0], colors[1]);
     firstGradient.setMidpoint(lower, upper);
+
     this.gradients = [firstGradient];
     this.intervals = [{
       lower,
       upper
     }];
 
-    for (let i = 1; i < colors.length -1; i++) {
+    colors.forEach((_, i: number) => {
       const gradientColor = new GradientColor();
       const lower = 0 + increment * i;
       const upper = 0 + increment * (i + 1);
@@ -118,7 +111,8 @@ export class Gradient {
         lower,
         upper
       };
-    }
+    });
+
     this.colors = colors;
   }
 
@@ -128,8 +122,9 @@ export class Gradient {
   }
 
   getArray(): string[] {
-    const gradientArray = [];
-    for (let j = 0; j < this.intervals.length; j++) {
+    const gradientArray: string[] = [];
+
+    this.intervals.forEach((_, j: number) => {
       const interval = this.intervals[j];
       const start = interval.lower === 0 ? 1 : Math.ceil(interval.lower);
       const end =
@@ -139,34 +134,34 @@ export class Gradient {
       for (let i = start; i < end; i++) {
         gradientArray.push(this.gradients[j].getColor(i));
       }
-    }
+    });
     return gradientArray;
   }
 
   getColor(numberValue: number) {
     if (isNaN(numberValue)) {
       throw new TypeError('getColor should be a number');
-    } else if (numberValue <= 0) {
-      throw new TypeError(`getColor should be greater than ${numberValue}`);
-    } else {
-      const segment = (this.maxNum - 0) / this.gradients.length;
-      const index = Math.min(
-        Math.floor((Math.max(numberValue, 0) - 0) / segment),
-        this.gradients.length - 1
-      );
-      return this.gradients[index].getColor(numberValue);
     }
+    if (numberValue <= 0) {
+      throw new TypeError(`getColor should be greater than ${numberValue}`);
+    }
+    const segment = (this.maxNum - 0) / this.gradients.length;
+    const index = Math.min(
+      Math.floor((Math.max(numberValue, 0) - 0) / segment),
+      this.gradients.length - 1
+    );
+    return this.gradients[index].getColor(numberValue);
   }
 
   setMidpoint (maxNumber: number): Gradient {
-    if (!isNaN(maxNumber) && maxNumber >= 0) {
-      this.maxNum = maxNumber;
-      this.setColors(this.colors);
-    } else if (maxNumber <= 0) {
-      throw new RangeError(`midPoint should be greater than ${maxNumber}`);
-    } else {
+    if (isNaN(maxNumber)) {
       throw new RangeError('midPoint should be a number');
     }
+    if (maxNumber <= 0) {
+      throw new RangeError(`midPoint should be greater than ${maxNumber}`);
+    }
+    this.maxNum = maxNumber;
+    this.setColors(this.colors);
     return this;
   }
 }
