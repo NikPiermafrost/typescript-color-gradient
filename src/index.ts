@@ -5,12 +5,17 @@ interface Limits {
 
 class GradientColor {
 
-  constructor(
-    private startColor = '', 
-    private endColor = '', 
-    private minNum = 0, 
-    private maxNum = 10
-  ) { }
+  private startColor: string;
+  private endColor: string;
+  private minNum: number;
+  private maxNum: number;
+
+  constructor() {
+    this.startColor = '';
+    this.endColor = '';
+    this.minNum = 0;
+    this.maxNum = 10;
+  }
 
   setGradient(colorStart: string, colorEnd: string) {
     this.startColor = this.getHexColor(colorStart);
@@ -70,12 +75,17 @@ class GradientColor {
 
 export class Gradient {
 
-  constructor(
-    private gradients: GradientColor[] = [], 
-    private maxNum = 10, 
-    private colors: string[] = ['', ''], 
-    private intervals: Limits[] = []
-  ) { }
+  private gradients: GradientColor[];
+  private maxNum: number;
+  private colors: string[];
+  private intervals: Limits[];
+  
+  constructor() {
+    this.gradients = [];
+    this.maxNum = 10;
+    this.colors = ['', ''];
+    this.intervals = [];
+  }
 
   private setColors(colors: string[]): void {
     if (colors.length < 2) {
@@ -100,10 +110,11 @@ export class Gradient {
       upper
     }];
 
-    colors.forEach((_, i: number) => {
+    for (let i = 1; i < colors.length - 1; i++) {
       const gradientColor = new GradientColor();
       const lower = 0 + increment * i;
       const upper = 0 + increment * (i + 1);
+      console.log(colors[i], colors[i + 1]);
       gradientColor.setGradient(colors[i], colors[i + 1]);
       gradientColor.setMidpoint(lower, upper);
       this.gradients[i] = gradientColor;
@@ -111,7 +122,7 @@ export class Gradient {
         lower,
         upper
       };
-    });
+    }
 
     this.colors = colors;
   }
@@ -124,7 +135,7 @@ export class Gradient {
   getArray(): string[] {
     const gradientArray: string[] = [];
 
-    this.intervals.forEach((_, j: number) => {
+    for (let j = 0; j < this.intervals.length; j++) {
       const interval = this.intervals[j];
       const start = interval.lower === 0 ? 1 : Math.ceil(interval.lower);
       const end =
@@ -134,7 +145,8 @@ export class Gradient {
       for (let i = start; i < end; i++) {
         gradientArray.push(this.gradients[j].getColor(i));
       }
-    });
+    }
+
     return gradientArray;
   }
 
@@ -165,3 +177,6 @@ export class Gradient {
     return this;
   }
 }
+
+const gradient = new Gradient();
+console.log(gradient.setGradient('#00ff00', '#ff00ff').setMidpoint(20).getArray());
