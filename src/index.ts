@@ -67,9 +67,7 @@ class GradientColor {
     const endBase = parseInt(end, 16);
     const average = (endBase - startBase) / midPoint;
     const finalBase = Math.round(average * (numberValue - this.minNum) + startBase);
-    const balancedFinalBase =
-      finalBase < 16 ? '0' + finalBase.toString(16) : finalBase.toString(16);
-    return balancedFinalBase;
+    return finalBase < 16 ? '0' + finalBase.toString(16) : finalBase.toString(16);
   }
 }
 
@@ -99,7 +97,7 @@ export class Gradient {
     const increment = (this.maxNum) / (colors.length - 1);
     const firstGradient = new GradientColor();
     const lower = 0;
-    const upper = 0 + increment;
+    const upper = increment;
 
     firstGradient.setGradient(colors[0], colors[1]);
     firstGradient.setMidpoint(lower, upper);
@@ -112,9 +110,8 @@ export class Gradient {
 
     for (let i = 1; i < colors.length - 1; i++) {
       const gradientColor = new GradientColor();
-      const lower = 0 + increment * i;
-      const upper = 0 + increment * (i + 1);
-      console.log(colors[i], colors[i + 1]);
+      const lower = increment * i;
+      const upper = increment * (i + 1);
       gradientColor.setGradient(colors[i], colors[i + 1]);
       gradientColor.setMidpoint(lower, upper);
       this.gradients[i] = gradientColor;
@@ -173,9 +170,9 @@ export class Gradient {
     if (numberValue <= 0) {
       throw new TypeError(`getColor should be greater than ${numberValue}`);
     }
-    const segment = (this.maxNum - 0) / this.gradients.length;
+    const segment = (this.maxNum) / this.gradients.length;
     const index = Math.min(
-      Math.floor((Math.max(numberValue, 0) - 0) / segment),
+      Math.floor((Math.max(numberValue, 0)) / segment),
       this.gradients.length - 1
     );
     return this.gradients[index].getColor(numberValue);
@@ -198,3 +195,4 @@ export class Gradient {
     return this;
   }
 }
+
