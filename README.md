@@ -6,7 +6,8 @@
 </div>
 <br />
 
-![MIT License](https://img.shields.io/npm/l/javascript-color-gradient)
+![MIT License](https://img.shields.io/npm/l/javascript-color-gradient) 
+[![Package Quality](https://packagequality.com/badge/typescript-color-gradient.png)](https://packagequality.com/#?package=typescript-color-gradient)
 
 ## Installation
 
