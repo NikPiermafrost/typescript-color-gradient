@@ -30,12 +30,12 @@ import { Gradient } from "typescript-color-gradient";
 
 ## Methods
 
-| Method           |     | Description                                                                              |
-| ---------------- | --- | ---------------------------------------------------------------------------------------- |
-| `setGradient()`  |     | Initializes `colorGradient` with two or more hex color values. Should always be defined. |
-| `setMidpoint(n)` |     | Defines number of midpoints. Defaults to 10.                                             |
-| `getArray()`     |     | Returns an array of hex color values .                                                   |
-| `getColor(n)`    |     | Returns single hex color value corresponding to the provided index.                      |
+| Method                 |     | Description                                                                              |
+| ---------------------- | --- | ---------------------------------------------------------------------------------------- |
+| `setGradient()`        |     | Initializes `colorGradient` with two or more hex color values. Should always be defined. |
+| `setNumberOfColors(n)` |     | Defines number of midpoints. Defaults to 10.                                             |
+| `getColors()`          |     | Returns an array of hex color values .                                                   |
+| `getColor(n)`          |     | Returns single hex color value corresponding to the provided index.                      |
 
 ## Usage
 
@@ -44,7 +44,7 @@ Using 2 colors and default (10) midpoints to generate an array of hex color valu
 ```typescript
 import { Gradient } from "typescript-color-gradient";
 
-const gradientArray = new Gradient().setGradient("#3F2CAF", "e9446a").getArray();
+const gradientArray = new Gradient().setGradient("#3F2CAF", "e9446a").getColors();
 
 console.log(gradientArray);
 // ["#502ea8", "#6131a1", "#72339a", "#833693", "#94388d", "#a53a86", "#b63d7f", "#c73f78", "#d84271", "#e9446a"]
@@ -57,7 +57,7 @@ import { Gradient } from "typescript-color-gradient";
 
 const gradientArray = new Gradient()
   .setGradient("#3F2CAF", "#e9446a", "#edc988", "#607D8B")
-  .setMidpoint(20)
+  .setNumberOfColors(20)
   .getArray();
 
 console.log(gradientArray);
@@ -71,8 +71,10 @@ import { Gradient } from "typescript-color-gradient";
 
 const colorAtTwo = new Gradient().setGradient("#3F2CAF", "e9446a").getColor(2);
 
+// colors: ["#502ea8", "#6131a1", "#72339a", "#833693", "#94388d", "#a53a86", "#b63d7f", "#c73f78", "#d84271", "#e9446a"]
+
 console.log(colorAtTwo);
-// #502ea8
+// #72339a
 ```
 
 ## Contributing

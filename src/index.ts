@@ -139,7 +139,7 @@ export class Gradient {
    * sets all the colors to generate a gradient.
    * @returns {string[]} the array of generated hex colors.
    */
-  getArray(): string[] {
+  getColors(): string[] {
     const gradientArray: string[] = [];
 
     for (let j = 0; j < this.intervals.length; j++) {
@@ -159,31 +159,34 @@ export class Gradient {
 
   /**
    * sets all the colors to generate a gradient.
-   * @param {number} numberValue the 1 start index of the color array. Thus i don't really like it,
-   * the original author made it like this so i left it as is.
+   * @param {number} numberValue the index of the color array.
    * @returns {string} the desired color from the gradient array.
    */
   getColor(numberValue: number): string {
     if (isNaN(numberValue)) {
       throw new TypeError('getColor should be a number');
     }
-    if (numberValue <= 0) {
+    if (numberValue < 0) {
       throw new TypeError(`getColor should be greater than ${numberValue}`);
     }
+    const toInsert = numberValue + 1;
     const segment = (this.maxNum) / this.gradients.length;
     const index = Math.min(
-      Math.floor((Math.max(numberValue, 0)) / segment),
+      Math.floor((Math.max(toInsert, 0)) / segment),
       this.gradients.length - 1
     );
-    return this.gradients[index].getColor(numberValue);
+    return this.gradients[index].getColor(toInsert);
   }
 
   /**
    * sets all the colors to generate a gradient.
-   * @param {number} maxNumber The number of colors generated from the gradient.
+   * @param {number} maxNumber The number of colors generated from the gradient. Default is 10
    * @returns {Gradient} for method chaining.
    */
-  setMidpoint(maxNumber: number): Gradient {
+  setNumberOfColors(maxNumber: number): Gradient {
+    if (this.colors.length === 2 && this.colors.some((color) => !color)) {
+      throw new EvalError('set some colors with the setGradient method first!');
+    }
     if (isNaN(maxNumber)) {
       throw new RangeError('midPoint should be a number');
     }
@@ -195,4 +198,3 @@ export class Gradient {
     return this;
   }
 }
-
