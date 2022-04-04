@@ -60,7 +60,7 @@ import { Gradient } from "typescript-color-gradient";
 const gradientArray = new Gradient()
   .setGradient("#3F2CAF", "#e9446a", "#edc988", "#607D8B")
   .setNumberOfColors(20)
-  .getArray();
+  .getColors();
 
 console.log(gradientArray);
 // ["#5930a5", "#72339a", "#8c3790", "#a53a86", "#bf3e7b", "#d84271", "#e94b6c", "#ea5f70", "#ea7375", "#eb8779", …]
