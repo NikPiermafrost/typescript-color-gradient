@@ -71,7 +71,7 @@ class GradientColor {
   }
 }
 
-export class Gradient {
+class Gradient {
 
   private gradients: GradientColor[];
   private maxNum: number;
@@ -197,4 +197,8 @@ export class Gradient {
     this.setColors(this.colors);
     return this;
   }
+}
+
+export {
+  Gradient
 }
