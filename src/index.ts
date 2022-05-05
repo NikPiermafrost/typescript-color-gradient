@@ -201,4 +201,4 @@ class Gradient {
 
 export {
   Gradient
-}
+};
