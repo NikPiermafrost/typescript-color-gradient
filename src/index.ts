@@ -84,47 +84,6 @@ class Gradient {
     this.colors = ['', ''];
     this.intervals = [];
   }
-
-  private setColors(colors: string[]): void {
-    if (colors.length < 2) {
-      throw new RangeError('At least 2 colors are needed');
-    }
-
-    if (colors.some((color) => !color)) {
-      throw new Error('All colors must be defined and/or not empty');
-    }
-
-    const increment = (this.maxNum) / (colors.length - 1);
-    const firstGradient = new GradientColor();
-    const lower = 0;
-    const upper = increment;
-
-    firstGradient.setGradient(colors[0], colors[1]);
-    firstGradient.setMidpoint(lower, upper);
-
-    this.gradients = [firstGradient];
-    this.intervals = [{
-      lower,
-      upper
-    }];
-
-    for (let i = 1; i < colors.length - 1; i++) {
-      const gradientColor = new GradientColor();
-      const lower = increment * i;
-      const upper = increment * (i + 1);
-      gradientColor.setGradient(colors[i], colors[i + 1]);
-      gradientColor.setMidpoint(lower, upper);
-      this.gradients[i] = gradientColor;
-      this.intervals[i] = {
-        lower,
-        upper
-      };
-    }
-
-    this.colors = colors;
-  }
-
-
   /**
    * sets all the colors to generate a gradient.
    * @param {string[]} gradients the hex colors from which the gradient is generated.
@@ -184,8 +143,8 @@ class Gradient {
    * @returns {Gradient} for method chaining.
    */
   setNumberOfColors(maxNumber: number): Gradient {
-    if (this.colors.length === 2 && this.colors.some((color) => !color)) {
-      throw new EvalError('set some colors with the setGradient method first!');
+    if (this.colors.some((color) => !color)) {
+      throw new EvalError('Set some colors with the setGradient method first!');
     }
     if (isNaN(maxNumber)) {
       throw new RangeError('midPoint should be a number');
@@ -196,6 +155,68 @@ class Gradient {
     this.maxNum = maxNumber;
     this.setColors(this.colors);
     return this;
+  }
+
+  private setColors(colors: string[]): void {
+
+    if (colors.some((color) => !color)) {
+      throw new Error('All colors must be defined and/or not empty');
+    }
+
+    if (!colors.length) {
+      colors.push(this.generateRandomColor());
+    }
+
+    if (colors.length === 1) {
+      const [onlyOne] = colors;
+      colors.push(this.generateComplementary(onlyOne));
+    }
+
+    const increment = (this.maxNum) / (colors.length - 1);
+    const firstGradient = new GradientColor();
+    const lower = 0;
+    const upper = increment;
+
+    firstGradient.setGradient(colors[0], colors[1]);
+    firstGradient.setMidpoint(lower, upper);
+
+    this.gradients = [firstGradient];
+    this.intervals = [{
+      lower,
+      upper
+    }];
+
+    for (let i = 1; i < colors.length - 1; i++) {
+      const gradientColor = new GradientColor();
+      const lower = increment * i;
+      const upper = increment * (i + 1);
+      gradientColor.setGradient(colors[i], colors[i + 1]);
+      gradientColor.setMidpoint(lower, upper);
+      this.gradients[i] = gradientColor;
+      this.intervals[i] = {
+        lower,
+        upper
+      };
+    }
+
+    this.colors = colors;
+  }
+
+  private generateComplementary(startingColor: string): string {
+    const result = startingColor
+      .match(/.{1,2}/g)
+      ?.map((hex: string) => Math.abs(parseInt(hex, 16) - 255).toString(16)?.padStart(2, '0'))
+      .join('');
+
+    if (result) {
+      return `#${result}`;
+    }
+
+    throw new EvalError(`String ${startingColor} does not respect Hex color format`);
+  }
+
+  private generateRandomColor(): string {
+    return `#${Math.floor(Math.random()*16777215).toString(16)}`;
   }
 }
 
