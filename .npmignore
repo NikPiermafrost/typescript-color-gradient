@@ -1,2 +1,4 @@
 .eslintrc.json
 CODE_OF_CONDUCT.md
+.nyx_output
+test

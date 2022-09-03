@@ -5,7 +5,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "prebuild": "tsc"
+    "prebuild": "tsc",
+    "test": "tap --ts"
   },
   "files": [
     "dist",
@@ -34,9 +35,12 @@
   },
   "homepage": "https://github.com/NikPiermafrost/typescript-color-gradient#readme",
   "devDependencies": {
+    "@types/tap": "^15.0.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "^8.23.0",
+    "tap": "^16.3.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
   }
 }

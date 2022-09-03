@@ -23,7 +23,7 @@ class GradientColor {
   }
 
   getHexColor(color: string) {
-    return color.substring(color.length - 6, color.length);
+    return color.split('#').splice(-1).join('');
   }
 
   setMidpoint(minNumber: number, maxNumber: number) {
@@ -32,9 +32,6 @@ class GradientColor {
   }
 
   getColor(numberValue: number): string {
-    if (!numberValue) {
-      throw new Error('Could not get a color, the numeric value is undefined or null');
-    }
     return (
       '#' +
       this.generateHex(
@@ -81,7 +78,7 @@ class Gradient {
   constructor() {
     this.gradients = [];
     this.maxNum = 10;
-    this.colors = ['', ''];
+    this.colors = [];
     this.intervals = [];
   }
   /**
@@ -90,7 +87,7 @@ class Gradient {
    * @returns {Gradient} for method chaining.
    */
   setGradient(...gradients: string[]): Gradient {
-    this.setColors(gradients);
+    this.setColors(gradients || []);
     return this;
   }
 
@@ -123,10 +120,13 @@ class Gradient {
    */
   getColor(numberValue: number): string {
     if (isNaN(numberValue)) {
-      throw new TypeError('getColor should be a number');
+      throw new TypeError('value should be a number');
     }
     if (numberValue < 0) {
-      throw new TypeError(`getColor should be greater than ${numberValue}`);
+      throw new TypeError(`value should be greater than ${numberValue}`);
+    }
+    if (numberValue > this.colors.length) {
+      throw new RangeError(`value should be lesser than ${this.maxNum}`);
     }
     const toInsert = numberValue + 1;
     const segment = (this.maxNum) / this.gradients.length;
@@ -143,14 +143,17 @@ class Gradient {
    * @returns {Gradient} for method chaining.
    */
   setNumberOfColors(maxNumber: number): Gradient {
-    if (this.colors.some((color) => !color)) {
+    if (this.colors?.length === 0) {
       throw new EvalError('Set some colors with the setGradient method first!');
+    }
+    if (this.colors.some((color) => this.isInvalid(color))) {
+      throw new Error('All colors must be defined and/or not empty');
     }
     if (isNaN(maxNumber)) {
       throw new RangeError('midPoint should be a number');
     }
-    if (maxNumber <= 0) {
-      throw new RangeError(`midPoint should be greater than ${maxNumber}`);
+    if (maxNumber < 1) {
+      throw new RangeError('midPoint should be greater than 0');
     }
     this.maxNum = maxNumber;
     this.setColors(this.colors);
@@ -159,10 +162,6 @@ class Gradient {
 
   private setColors(colors: string[]): void {
 
-    if (colors.some((color) => !color)) {
-      throw new Error('All colors must be defined and/or not empty');
-    }
-
     if (!colors.length) {
       colors.push(this.generateRandomColor());
     }
@@ -170,6 +169,10 @@ class Gradient {
     if (colors.length === 1) {
       const [onlyOne] = colors;
       colors.push(this.generateComplementary(onlyOne));
+    }
+
+    if (colors.some((color) => this.isInvalid(color))) {
+      throw new Error('All colors must be defined and/or not empty');
     }
 
     const increment = (this.maxNum) / (colors.length - 1);
@@ -204,6 +207,9 @@ class Gradient {
 
   private generateComplementary(startingColor: string): string {
     const result = startingColor
+      .split('#')
+      .splice(-1)
+      .join('')
       .match(/.{1,2}/g)
       ?.map((hex: string) => Math.abs(parseInt(hex, 16) - 255).toString(16)?.padStart(2, '0'))
       .join('');
@@ -217,6 +223,14 @@ class Gradient {
 
   private generateRandomColor(): string {
     return `#${Math.floor(Math.random()*16777215).toString(16)}`;
+  }
+
+  private isInvalid(color: string): boolean {
+    const regex = /[0-9A-Fa-f]{6}/;
+    return color?.length < 6 
+    || color?.length > 7
+    || isNaN(parseInt(color.split('#').splice(-1).join(''), 16))
+    || !regex.test(color);
   }
 }
 
