@@ -1,3 +1,4 @@
+
 <div>
     <h1>Typescript Color Gradient</h1>
     <h4>All credits to Adrinlol, original creator of this simple yet amazing library</h4>
@@ -24,11 +25,6 @@ Then import the module into your JavaScript:
 import { Gradient } from "typescript-color-gradient";
 ```
 
-<!-- ## Demo
-
-[A demo is worth a thousand words](https://codesandbox.io/s/javascript-color-gradient-csgfd).
-
-**Note:** All the examples are using ES6, be sure is supported in your browser or modify as needed, Chrome recommended. -->
 
 ## Methods
 
@@ -40,6 +36,27 @@ import { Gradient } from "typescript-color-gradient";
 | `getColor(n)`          |     | Returns single hex color value corresponding to the provided index.                      |
 
 ## Usage
+Generate a random gradient
+```typescript
+import { Gradient } from "typescript-color-gradient";
+
+const gradientArray = new Gradient().getColors();
+
+console.log(gradientArray);
+// [... a a gradient with 10 colors starting by generating a random color and his spectrum opposite]
+```
+
+
+Using 1 colors and default (10) midpoints to generate an array of hex color values:
+
+```typescript
+import { Gradient } from "typescript-color-gradient";
+
+const gradientArray = new Gradient().setGradient("#3F2CAF").getColors();
+
+console.log(gradientArray);
+// [... a a gradient with 10 colors starting by the selected color and his spectrum opposite]
+```
 
 Using 2 colors and default (10) midpoints to generate an array of hex color values:
 

@@ -80,6 +80,7 @@ class Gradient {
     this.maxNum = 10;
     this.colors = [];
     this.intervals = [];
+    this.setGradient(...this.colors);
   }
   /**
    * sets all the colors to generate a gradient.
@@ -123,7 +124,7 @@ class Gradient {
       throw new TypeError('value should be a number');
     }
     if (numberValue < 0) {
-      throw new TypeError(`value should be greater than ${numberValue}`);
+      throw new RangeError('value should be greater or equal than 0');
     }
     if (numberValue > this.colors.length) {
       throw new RangeError(`value should be lesser than ${this.maxNum}`);
@@ -143,17 +144,11 @@ class Gradient {
    * @returns {Gradient} for method chaining.
    */
   setNumberOfColors(maxNumber: number): Gradient {
-    if (this.colors?.length === 0) {
-      throw new EvalError('Set some colors with the setGradient method first!');
-    }
-    if (this.colors.some((color) => this.isInvalid(color))) {
-      throw new Error('All colors must be defined and/or not empty');
-    }
     if (isNaN(maxNumber)) {
       throw new RangeError('midPoint should be a number');
     }
-    if (maxNumber < 1) {
-      throw new RangeError('midPoint should be greater than 0');
+    if (maxNumber < 0) {
+      throw new RangeError('midPoint should be greater or equal than 0');
     }
     this.maxNum = maxNumber;
     this.setColors(this.colors);
@@ -214,15 +209,11 @@ class Gradient {
       ?.map((hex: string) => Math.abs(parseInt(hex, 16) - 255).toString(16)?.padStart(2, '0'))
       .join('');
 
-    if (result) {
-      return `#${result}`;
-    }
-
-    throw new EvalError(`String ${startingColor} does not respect Hex color format`);
+    return `#${result}`;
   }
 
   private generateRandomColor(): string {
-    return `#${Math.floor(Math.random()*16777215).toString(16)}`;
+    return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
   }
 
   private isInvalid(color: string): boolean {
