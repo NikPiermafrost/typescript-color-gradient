@@ -1,6 +1,6 @@
 {
   "name": "typescript-color-gradient",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "typescript-color-gradient is a typescript native fork of javascript-color-gradient, a lightweight JavaScript library used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -33,7 +33,7 @@
   "bugs": {
     "url": "https://github.com/NikPiermafrost/typescript-color-gradient/issues"
   },
-  "homepage": "https://github.com/NikPiermafrost/typescript-color-gradient#readme",
+  "homepage": "https://nicolapiermattei.net/examples/typescript-color-gradient",
   "devDependencies": {
     "@types/tap": "^15.0.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
