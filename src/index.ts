@@ -204,10 +204,7 @@ class Gradient {
     const result = startingColor
       .split('#')
       .splice(-1)
-      .join('')
-      .match(/.{1,2}/g)
-      ?.map((hex: string) => Math.abs(parseInt(hex, 16) - 255).toString(16)?.padStart(2, '0'))
-      .join('');
+      .reverse();
 
     return `#${result}`;
   }
