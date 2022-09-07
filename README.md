@@ -43,7 +43,7 @@ import { Gradient } from "typescript-color-gradient";
 const gradientArray = new Gradient().getColors();
 
 console.log(gradientArray);
-// [... a a gradient with 10 colors starting by generating a random color and his spectrum opposite]
+// [... a a gradient with 10 colors starting by generating a random color and his opposite hex string value]
 ```
 
 
@@ -55,7 +55,7 @@ import { Gradient } from "typescript-color-gradient";
 const gradientArray = new Gradient().setGradient("#3F2CAF").getColors();
 
 console.log(gradientArray);
-// [... a a gradient with 10 colors starting by the selected color and his spectrum opposite]
+// [... a a gradient with 10 colors starting by the selected color and his opposite hex string value]
 ```
 
 Using 2 colors and default (10) midpoints to generate an array of hex color values:
