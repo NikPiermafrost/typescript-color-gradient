@@ -203,10 +203,9 @@ class Gradient {
   private generateComplementary(startingColor: string): string {
     const result = startingColor
       .split('#')
-      .splice(-1)
-      .reverse();
+      .at(-1);
 
-    return `#${result}`;
+    return `#${result?.split('').reverse().join('')}`;
   }
 
   private generateRandomColor(): string {
