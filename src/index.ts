@@ -101,13 +101,13 @@ class Gradient {
 
     for (let j = 0; j < this.intervals.length; j++) {
       const interval = this.intervals[j];
-      const start = interval.lower === 0 ? 1 : Math.ceil(interval.lower);
+      const start = interval!.lower === 0 ? 1 : Math.ceil(interval!.lower);
       const end =
-        interval.upper === this.maxNum
-          ? interval.upper + 1
-          : Math.ceil(interval.upper);
+        interval!.upper === this.maxNum
+          ? interval!.upper + 1
+          : Math.ceil(interval!.upper);
       for (let i = start; i < end; i++) {
-        gradientArray.push(this.gradients[j].getColor(i));
+        gradientArray.push(this.gradients[j]!.getColor(i));
       }
     }
 
@@ -135,7 +135,7 @@ class Gradient {
       Math.floor((Math.max(toInsert, 0)) / segment),
       this.gradients.length - 1
     );
-    return this.gradients[index].getColor(toInsert);
+    return this.gradients[index]!.getColor(toInsert);
   }
 
   /**
@@ -163,7 +163,7 @@ class Gradient {
 
     if (colors.length === 1) {
       const [onlyOne] = colors;
-      colors.push(this.generateComplementary(onlyOne));
+      colors.push(this.generateComplementary(onlyOne!));
     }
 
     if (colors.some((color) => this.isInvalid(color))) {
@@ -175,7 +175,7 @@ class Gradient {
     const lower = 0;
     const upper = increment;
 
-    firstGradient.setGradient(colors[0], colors[1]);
+    firstGradient.setGradient(colors[0]!, colors[1]!);
     firstGradient.setMidpoint(lower, upper);
 
     this.gradients = [firstGradient];
@@ -188,7 +188,7 @@ class Gradient {
       const gradientColor = new GradientColor();
       const lower = increment * i;
       const upper = increment * (i + 1);
-      gradientColor.setGradient(colors[i], colors[i + 1]);
+      gradientColor.setGradient(colors[i]!, colors[i + 1]!);
       gradientColor.setMidpoint(lower, upper);
       this.gradients[i] = gradientColor;
       this.intervals[i] = {
