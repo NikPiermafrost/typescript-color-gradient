@@ -1,13 +1,13 @@
 {
   "name": "typescript-color-gradient",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "typescript-color-gradient is a typescript native fork of javascript-color-gradient, a lightweight JavaScript library used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "lint": "tsc",
-    "test": "tap --ts",
+    "test": "tap --tsconfig=./tsconfig.json",
     "build": "tsup ./src/index.ts --format cjs,esm --dts"
   },
   "files": [
@@ -37,13 +37,15 @@
   },
   "homepage": "https://nicolapiermattei.net/examples/typescript-color-gradient",
   "devDependencies": {
-    "@types/tap": "^15.0.8",
-    "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "@typescript-eslint/parser": "^5.58.0",
-    "eslint": "^8.38.0",
-    "tap": "^16.3.4",
+    "@tapjs/test": "^1.3.13",
+    "@tapjs/typescript": "^1.3.2",
+    "@types/tap": "^15.0.9",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.51.0",
+    "tap": "^18.5.2",
     "ts-node": "^10.9.1",
-    "tsup": "^6.7.0",
-    "typescript": "^5.0.4"
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
   }
 }

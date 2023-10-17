@@ -53,18 +53,16 @@ class GradientColor {
   }
 
   generateHex(numberValue: number, start: string, end: string) {
-    if (numberValue < this.minNum) {
-      numberValue = this.minNum;
-    } else if (numberValue > this.maxNum) {
-      numberValue = this.maxNum;
-    }
+    const minNum = this.minNum;
+    const maxNum = this.maxNum;
+    const finalBase = Math.round(
+      ((parseInt(end, 16) - parseInt(start, 16)) / (maxNum - minNum)) * (numberValue - minNum) + parseInt(start, 16)
+    );
 
-    const midPoint = this.maxNum - this.minNum;
-    const startBase = parseInt(start, 16);
-    const endBase = parseInt(end, 16);
-    const average = (endBase - startBase) / midPoint;
-    const finalBase = Math.round(average * (numberValue - this.minNum) + startBase);
-    return finalBase < 16 ? '0' + finalBase.toString(16) : finalBase.toString(16);
+    if (finalBase < 16) {
+      return '0' + finalBase.toString(16);
+    }
+    return finalBase.toString(16);
   }
 }
 
@@ -99,15 +97,19 @@ class Gradient {
   getColors(): string[] {
     const gradientArray: string[] = [];
 
-    for (let j = 0; j < this.intervals.length; j++) {
-      const interval = this.intervals[j];
+    const intervals = this.intervals;
+    const gradients = this.gradients;
+    const maxNum = this.maxNum;
+
+    for (let j = 0; j < intervals.length; j++) {
+      const interval = intervals[j];
       const start = interval!.lower === 0 ? 1 : Math.ceil(interval!.lower);
       const end =
-        interval!.upper === this.maxNum
+        interval!.upper === maxNum
           ? interval!.upper + 1
           : Math.ceil(interval!.upper);
       for (let i = start; i < end; i++) {
-        gradientArray.push(this.gradients[j]!.getColor(i));
+        gradientArray.push(gradients[j]!.getColor(i));
       }
     }
 
@@ -201,15 +203,11 @@ class Gradient {
   }
 
   private generateComplementary(startingColor: string): string {
-    const result = startingColor
-      .split('#')
-      .at(-1);
-
-    return `#${result?.split('').reverse().join('')}`;
+    return `#${startingColor.slice(-6).split('').reverse().join('')}`;
   }
 
   private generateRandomColor(): string {
-    return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+    return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`;
   }
 
   private isInvalid(color: string): boolean {
