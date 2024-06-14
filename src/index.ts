@@ -67,7 +67,6 @@ class GradientColor {
 }
 
 class Gradient {
-
   private gradients: GradientColor[];
   private maxNum: number;
   private colors: string[];
