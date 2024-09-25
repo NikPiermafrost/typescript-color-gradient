@@ -22,48 +22,38 @@ npm install typescript-color-gradient
 Then import the module into your JavaScript:
 
 ```typescript
-import { Gradient } from "typescript-color-gradient";
+import { generateGradient } from  from "typescript-color-gradient";
 ```
-
-
-## Methods
-
-| Method                 |     | Description                                                                              |
-| ---------------------- | --- | ---------------------------------------------------------------------------------------- |
-| `setGradient()`        |     | Initializes `colorGradient` with two or more hex color values. Should always be defined. |
-| `setNumberOfColors(n)` |     | Defines number of midpoints. Defaults to 10.                                             |
-| `getColors()`          |     | Returns an array of hex color values .                                                   |
-| `getColor(n)`          |     | Returns single hex color value corresponding to the provided index.                      |
 
 ## Usage
 Generate a random gradient
 ```typescript
-import { Gradient } from "typescript-color-gradient";
+import { generateGradient } from  from "typescript-color-gradient";
 
-const gradientArray = new Gradient().getColors();
+const gradientArray = generateGradient();
 
 console.log(gradientArray);
-// [... a a gradient with 10 colors starting by generating a random color and his opposite hex string value]
+// [... a gradient with 10 colors starting by generating a random color and his complementary hex string value]
 ```
 
 
 Using 1 colors and default (10) midpoints to generate an array of hex color values:
 
 ```typescript
-import { Gradient } from "typescript-color-gradient";
+import { generateGradient } from  from "typescript-color-gradient";
 
-const gradientArray = new Gradient().setGradient("#3F2CAF").getColors();
+const gradientArray = generateGradient(["#3F2CAF"]);
 
 console.log(gradientArray);
-// [... a a gradient with 10 colors starting by the selected color and his opposite hex string value]
+// [... a gradient with 10 colors starting by the selected color and his complementary hex string value]
 ```
 
 Using 2 colors and default (10) midpoints to generate an array of hex color values:
 
 ```typescript
-import { Gradient } from "typescript-color-gradient";
+import { generateGradient } from  from "typescript-color-gradient";
 
-const gradientArray = new Gradient().setGradient("#3F2CAF", "e9446a").getColors();
+const gradientArray = generateGradient(["#3F2CAF", "#e9446a"]);
 
 console.log(gradientArray);
 // ["#502ea8", "#6131a1", "#72339a", "#833693", "#94388d", "#a53a86", "#b63d7f", "#c73f78", "#d84271", "#e9446a"]
@@ -71,6 +61,18 @@ console.log(gradientArray);
 
 Using 4 colors and 20 midpoints to generate an array of hex color values :
 
+```javascript
+import { generateGradient } from  from "typescript-color-gradient";
+
+const gradientArray = generateGradient(["#3F2CAF", "#e9446a", "#edc988", "#607D8B"], 20);
+
+console.log(gradientArray);
+// ["#5930a5", "#72339a", "#8c3790", "#a53a86", "#bf3e7b", "#d84271", "#e94b6c", "#ea5f70", "#ea7375", "#eb8779", …]
+```
+
+## Migrating to V4
+
+It just goes from
 ```javascript
 import { Gradient } from "typescript-color-gradient";
 
@@ -80,21 +82,17 @@ const gradientArray = new Gradient()
   .getColors();
 
 console.log(gradientArray);
-// ["#5930a5", "#72339a", "#8c3790", "#a53a86", "#bf3e7b", "#d84271", "#e94b6c", "#ea5f70", "#ea7375", "#eb8779", …]
 ```
 
-Using two colors and default (10) midpoints to return single hex color value corresponding to the provided index:
-
+to
 ```javascript
-import { Gradient } from "typescript-color-gradient";
+import { generateGradient } from  from "typescript-color-gradient";
 
-const colorAtTwo = new Gradient().setGradient("#3F2CAF", "e9446a").getColor(2);
+const gradientArray = generateGradient(["#3F2CAF", "#e9446a", "#edc988", "#607D8B"], 20);
 
-// colors: ["#502ea8", "#6131a1", "#72339a", "#833693", "#94388d", "#a53a86", "#b63d7f", "#c73f78", "#d84271", "#e9446a"]
-
-console.log(colorAtTwo);
-// #72339a
+console.log(gradientArray);
 ```
+
 
 ## Contributing
 

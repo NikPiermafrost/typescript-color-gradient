@@ -1,0 +1,242 @@
+{
+  "date": "2024-09-25T19:13:23.915Z",
+  "argv": [
+    "/home/nick/.nvm/versions/node/v20.17.0/bin/node",
+    "/home/nick/repos/personal/typescript-color-gradient/test/index.spec.ts"
+  ],
+  "execArgv": [
+    "--import=file:///home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@isaacs+ts-node-temp-fork-for-pr-2009@10.9.7_@types+node@22.7.0_typescript@5.4.5/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/import.mjs",
+    "--import=file:///home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/import.mjs",
+    "--enable-source-maps",
+    "--import=file:///home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+processinfo@3.1.8/node_modules/@tapjs/processinfo/dist/esm/import.mjs"
+  ],
+  "NODE_OPTIONS": "\"\" \"--require\" \"/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/node-preload@0.2.1/node_modules/node-preload/preload-path/node-preload.js\" \"--import=file:///home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+processinfo@3.1.8/node_modules/@tapjs/processinfo/dist/esm/import.mjs\" --require /home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/node-preload@0.2.1/node_modules/node-preload/preload-path/node-preload.js",
+  "cwd": "/home/nick/repos/personal/typescript-color-gradient",
+  "pid": 293565,
+  "ppid": 293530,
+  "parent": null,
+  "uuid": "88000a25-0bd7-4708-b744-e7e927939404",
+  "files": [
+    "/home/nick/repos/personal/typescript-color-gradient/test/index.spec.ts",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@isaacs+ts-node-temp-fork-for-pr-2009@10.9.7_@types+node@22.7.0_typescript@5.4.5/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/import.mjs",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@isaacs+ts-node-temp-fork-for-pr-2009@10.9.7_@types+node@22.7.0_typescript@5.4.5/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/import-loader.mjs",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/import.mjs",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/mock-service.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/is-relative-require.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/export-line.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/munge-mocks.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/resolve-mock-entry-point.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/service-key.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-all-conditional-values.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-all-conditions.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-all-exports.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-all-local-imports.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-conditional-value.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-import.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/call-site-like.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/require-resolve.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/is-windows.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-conditional-values-list.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/errors.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-named-exports-list.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/read-pkg.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-export.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/star-glob.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/to-path.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/file-exists.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/find-dep-package.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/to-file-url.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-dependency-export.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-package-import.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/parse.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/read-json.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/find-star-match.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/walk-up-path@3.0.1/node_modules/walk-up-path/dist/mjs/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/glob.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/has-magic.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/ignore.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/assert-valid-pattern.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/ast.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/escape.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/unescape.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/path-scurry@1.11.1/node_modules/path-scurry/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/pattern.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/walker.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minipass@7.1.2/node_modules/minipass/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/processor.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/lru-cache@10.4.3/node_modules/lru-cache/dist/esm/index.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/brace-expressions.js",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/loader.mjs",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/hooks.mjs",
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/mock-service-client.js",
+    "/home/nick/repos/personal/typescript-color-gradient/src/index.ts"
+  ],
+  "sources": {
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/import.mjs": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/src/import.mts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/mock-service.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/src/mock-service.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/is-relative-require.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/is-relative-require.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/export-line.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/src/export-line.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/munge-mocks.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/src/munge-mocks.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/resolve-mock-entry-point.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/src/resolve-mock-entry-point.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/dist/esm/service-key.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+mock@2.1.6_@tapjs+core@2.1.6_@types+node@22.7.0_react-dom@18.2.0_react@18.3.1__react@18.3.1_/node_modules/@tapjs/mock/src/service-key.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-all-conditional-values.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/get-all-conditional-values.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-all-conditions.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/get-all-conditions.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/get-unique-condition-sets.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-all-exports.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-all-exports.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-all-local-imports.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-all-local-imports.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-conditional-value.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-conditional-value.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-import.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-import.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/call-site-like.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/src/call-site-like.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/require-resolve.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/src/require-resolve.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/is-windows.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/is-windows.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-conditional-values-list.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/get-conditional-values-list.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/errors.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/errors.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/get-named-exports-list.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/get-named-exports-list.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/read-pkg.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/read-pkg.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-export.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-export.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/star-glob.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/star-glob.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/to-path.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/to-path.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/file-exists.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/file-exists.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/find-dep-package.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/find-dep-package.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/to-file-url.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/to-file-url.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-dependency-export.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-dependency-export.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/resolve-package-import.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/resolve-package-import.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/dist/esm/parse.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/@tapjs+stack@2.0.1/node_modules/@tapjs/stack/src/parse.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/read-json.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/read-json.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/dist/esm/find-star-match.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/resolve-import@1.4.6/node_modules/resolve-import/src/find-star-match.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/walk-up-path@3.0.1/node_modules/walk-up-path/dist/mjs/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/walk-up-path@3.0.1/node_modules/walk-up-path/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/glob.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/glob.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/has-magic.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/has-magic.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/ignore.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/ignore.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/assert-valid-pattern.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/src/assert-valid-pattern.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/ast.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/src/ast.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/escape.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/src/escape.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/unescape.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/src/unescape.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/path-scurry@1.11.1/node_modules/path-scurry/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/path-scurry@1.11.1/node_modules/path-scurry/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/pattern.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/pattern.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/walker.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/walker.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minipass@7.1.2/node_modules/minipass/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minipass@7.1.2/node_modules/minipass/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/dist/esm/processor.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/glob@10.4.5/node_modules/glob/src/processor.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/lru-cache@10.4.3/node_modules/lru-cache/dist/esm/index.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/lru-cache@10.4.3/node_modules/lru-cache/src/index.ts"
+    ],
+    "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/dist/esm/brace-expressions.js": [
+      "/home/nick/repos/personal/typescript-color-gradient/node_modules/.pnpm/minimatch@9.0.5/node_modules/minimatch/src/brace-expressions.ts"
+    ]
+  },
+  "root": "88000a25-0bd7-4708-b744-e7e927939404",
+  "externalID": "test/index.spec.ts",
+  "code": 0,
+  "signal": null,
+  "runtime": 1119.733631,
+  "globalsAdded": [
+    "__coverage__"
+  ]
+}
