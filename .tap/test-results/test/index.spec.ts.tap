@@ -4,30 +4,30 @@ TAP version 14
         ok 1 - should be equal
         ok 2 - expect to not throw
         1..2
-    ok 1 - It generates a gradient from devault value # time=3.677ms
+    ok 1 - It generates a gradient from devault value # time=1.973ms
     
     # Subtest: it generates a gradient from one color
         ok 1 - should be equal
         ok 2 - expect to not throw
         1..2
-    ok 2 - it generates a gradient from one color # time=0.656ms
+    ok 2 - it generates a gradient from one color # time=0.307ms
     
     # Subtest: It generates a gradient from more colors
         ok 1 - expected to throw
         1..1
-    ok 3 - It generates a gradient from more colors # time=2.343ms
+    ok 3 - It generates a gradient from more colors # time=1.122ms
     
     # Subtest: it generates a gradient of 20 elements
         ok 1 - should be equal
         ok 2 - expect to not throw
         1..2
-    ok 4 - it generates a gradient of 20 elements # time=0.722ms
+    ok 4 - it generates a gradient of 20 elements # time=0.292ms
     
     # Subtest: It generates a gradient from three colors and 25 elements
         ok 1 - should be equal
         ok 2 - expect to not throw
         1..2
-    ok 5 - It generates a gradient from three colors and 25 elements # time=0.763ms
+    ok 5 - It generates a gradient from three colors and 25 elements # time=0.321ms
     
     # Subtest: It throws correct excpetions
         ok 1 - expected to throw
@@ -37,9 +37,9 @@ TAP version 14
         ok 5 - expected to throw
         ok 6 - expected to throw
         1..6
-    ok 6 - It throws correct excpetions # time=2.472ms
+    ok 6 - It throws correct excpetions # time=0.952ms
     
     1..6
-ok 1 - It generates a gradient # time=24.268ms
+ok 1 - It generates a gradient # time=13.364ms
 
 1..1
