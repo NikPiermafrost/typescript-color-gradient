@@ -4,12 +4,16 @@ on:
     branches:
       - "main"
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: crodiapi
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
+      - uses: actions/setup-node@v3
         with:
           node-version: 22.x
           cache: "pnpm"
