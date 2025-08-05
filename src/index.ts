@@ -2,40 +2,6 @@ function getHexColor(color: string): string {
   return color.replace('#', '');
 }
 
-function generateHex(midPoint: number, start: string, end: string, min: number, max: number): string {
-  const startInt = parseInt(start, 16);
-  const endInt = parseInt(end, 16);
-
-  const finalBase = Math.round(
-    ((endInt - startInt) / (max - min)) * (midPoint - min) + startInt
-  );
-
-  return finalBase < 16 ? '0' + finalBase.toString(16) : finalBase.toString(16);
-}
-
-function getColor(midPoint: number, startColor: string, endColor: string, min: number, max: number): string {
-  const startR = startColor.substring(0, 2);
-  const startG = startColor.substring(2, 4);
-  const startB = startColor.substring(4, 6);
-
-  const endR = endColor.substring(0, 2);
-  const endG = endColor.substring(2, 4);
-  const endB = endColor.substring(4, 6);
-
-  return (
-    '#' +
-    generateHex(midPoint, startR, endR, min, max) +
-    generateHex(midPoint, startG, endG, min, max) +
-    generateHex(midPoint, startB, endB, min, max)
-  );
-}
-
-function generateGradientColor(midPoint: number, startColor: string, endColor: string, min: number, max: number): string {
-  const startHex = getHexColor(startColor);
-  const endHex = getHexColor(endColor);
-  return getColor(midPoint, startHex, endHex, min, max);
-}
-
 function generateComplementary(color: string): string {
   return `#${color.slice(-6).split('').reverse().join('')}`;
 }
@@ -47,6 +13,33 @@ function isColorValid(color: string): boolean {
 
 function generateRandomColor(): string {
   return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`;
+}
+
+function parseHexColor(hex: string): [number, number, number] {
+  return [
+    parseInt(hex.substring(0, 2), 16),
+    parseInt(hex.substring(2, 4), 16),
+    parseInt(hex.substring(4, 6), 16),
+  ];
+}
+
+function getColorFast(
+  midPoint: number,
+  startRGB: [number, number, number],
+  endRGB: [number, number, number],
+  min: number,
+  max: number
+): string {
+  function interp(start: number, end: number) {
+    const val = Math.round(((end - start) / (max - min)) * (midPoint - min) + start);
+    return val < 16 ? '0' + val.toString(16) : val.toString(16);
+  }
+  return (
+    '#' +
+    interp(startRGB[0], endRGB[0]) +
+    interp(startRGB[1], endRGB[1]) +
+    interp(startRGB[2], endRGB[2])
+  );
 }
 
 function generateGradient(colors: string[] = [], numberOfColors: number = 10): string[] {
@@ -69,13 +62,20 @@ function generateGradient(colors: string[] = [], numberOfColors: number = 10): s
     }
   });
 
+  // Special case: exactly two colors and two steps, just return them
+  if (colors.length === 2 && numberOfColors === 2) {
+    return [colors[0]!, colors[1]!];
+  }
+
   const gradientArray: string[] = new Array(numberOfColors);
   const increment = Math.ceil(numberOfColors / (colors.length - 1));
   let currentIndex = 0;
 
   for (let i = 0; i < colors.length - 1; i++) {
-    const startColor = colors[i]!;
-    const endColor = colors[i + 1]!;
+    const startHex = getHexColor(colors[i]!);
+    const endHex = getHexColor(colors[i + 1]!);
+    const startRGB = parseHexColor(startHex);
+    const endRGB = parseHexColor(endHex);
     const min = increment * i;
     const max = increment * (i + 1);
 
@@ -83,7 +83,7 @@ function generateGradient(colors: string[] = [], numberOfColors: number = 10): s
     const end = max === numberOfColors ? max + 1 : max;
 
     for (let midPoint = start; midPoint < end; midPoint++) {
-      gradientArray[currentIndex] = generateGradientColor(midPoint, startColor, endColor, min, max )  ;
+      gradientArray[currentIndex] = getColorFast(midPoint, startRGB, endRGB, min, max);
       currentIndex++;
     }
   }

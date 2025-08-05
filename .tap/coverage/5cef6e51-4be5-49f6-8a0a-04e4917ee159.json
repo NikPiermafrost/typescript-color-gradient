@@ -1,0 +1,313 @@
+{
+  "result": [
+    {
+      "scriptId": "315",
+      "url": "file:///home/nick/repos/personal/typescript-color-gradient/src/index.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 11043,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getHexColor",
+          "ranges": [
+            {
+              "startOffset": 122,
+              "endOffset": 188,
+              "count": 20
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "generateComplementary",
+          "ranges": [
+            {
+              "startOffset": 189,
+              "endOffset": 293,
+              "count": 10
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "isColorValid",
+          "ranges": [
+            {
+              "startOffset": 294,
+              "endOffset": 413,
+              "count": 26
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "generateRandomColor",
+          "ranges": [
+            {
+              "startOffset": 414,
+              "endOffset": 533,
+              "count": 4
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "parseHexColor",
+          "ranges": [
+            {
+              "startOffset": 534,
+              "endOffset": 714,
+              "count": 20
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getColorFast",
+          "ranges": [
+            {
+              "startOffset": 715,
+              "endOffset": 1118,
+              "count": 130
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "interp",
+          "ranges": [
+            {
+              "startOffset": 781,
+              "endOffset": 975,
+              "count": 390
+            },
+            {
+              "startOffset": 925,
+              "endOffset": 949,
+              "count": 63
+            },
+            {
+              "startOffset": 950,
+              "endOffset": 968,
+              "count": 327
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "generateGradient",
+          "ranges": [
+            {
+              "startOffset": 1119,
+              "endOffset": 2662,
+              "count": 16
+            },
+            {
+              "startOffset": 1223,
+              "endOffset": 1244,
+              "count": 15
+            },
+            {
+              "startOffset": 1246,
+              "endOffset": 1336,
+              "count": 2
+            },
+            {
+              "startOffset": 1336,
+              "endOffset": 1361,
+              "count": 14
+            },
+            {
+              "startOffset": 1361,
+              "endOffset": 1412,
+              "count": 4
+            },
+            {
+              "startOffset": 1412,
+              "endOffset": 1442,
+              "count": 14
+            },
+            {
+              "startOffset": 1442,
+              "endOffset": 1544,
+              "count": 10
+            },
+            {
+              "startOffset": 1544,
+              "endOffset": 1785,
+              "count": 14
+            },
+            {
+              "startOffset": 1785,
+              "endOffset": 1808,
+              "count": 7
+            },
+            {
+              "startOffset": 1810,
+              "endOffset": 1856,
+              "count": 1
+            },
+            {
+              "startOffset": 1856,
+              "endOffset": 2055,
+              "count": 8
+            },
+            {
+              "startOffset": 2055,
+              "endOffset": 2634,
+              "count": 10
+            },
+            {
+              "startOffset": 2361,
+              "endOffset": 2364,
+              "count": 8
+            },
+            {
+              "startOffset": 2365,
+              "endOffset": 2370,
+              "count": 2
+            },
+            {
+              "startOffset": 2415,
+              "endOffset": 2424,
+              "count": 6
+            },
+            {
+              "startOffset": 2425,
+              "endOffset": 2430,
+              "count": 4
+            },
+            {
+              "startOffset": 2495,
+              "endOffset": 2628,
+              "count": 130
+            },
+            {
+              "startOffset": 2634,
+              "endOffset": 2661,
+              "count": 8
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1564,
+              "endOffset": 1682,
+              "count": 26
+            },
+            {
+              "startOffset": 1609,
+              "endOffset": 1676,
+              "count": 5
+            }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    }
+  ],
+  "timestamp": 6014.411563,
+  "source-map-cache": {
+    "file:///home/nick/repos/personal/typescript-color-gradient/src/index.ts": {
+      "lineLengths": [
+        13,
+        62,
+        44,
+        29,
+        34,
+        1,
+        39,
+        62,
+        1,
+        30,
+        48,
+        37,
+        1,
+        32,
+        84,
+        1,
+        29,
+        12,
+        42,
+        42,
+        42,
+        6,
+        1,
+        61,
+        33,
+        89,
+        68,
+        5,
+        17,
+        40,
+        40,
+        40,
+        1,
+        61,
+        66,
+        82,
+        5,
+        25,
+        43,
+        5,
+        30,
+        39,
+        54,
+        5,
+        29,
+        35,
+        55,
+        9,
+        7,
+        71,
+        54,
+        38,
+        5,
+        52,
+        70,
+        25,
+        49,
+        48,
+        50,
+        49,
+        45,
+        34,
+        40,
+        42,
+        59,
+        64,
+        93,
+        27,
+        9,
+        5,
+        25,
+        1,
+        8380
+      ],
+      "data": {
+        "version": 3,
+        "file": "/home/nick/repos/personal/typescript-color-gradient/src/index.ts",
+        "sources": [
+          "file:///home/nick/repos/personal/typescript-color-gradient/src/index.ts"
+        ],
+        "names": [],
+        "mappings": "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",
+        "sourcesContent": [
+          "function getHexColor(color: string): string {\n  return color.replace('#', '');\n}\n\nfunction generateComplementary(color: string): string {\n  return `#${color.slice(-6).split('').reverse().join('')}`;\n}\n\nfunction isColorValid(color: string): boolean {\n  const hexColorRegex = /^#([0-9A-Fa-f]{6})$/;\n  return hexColorRegex.test(color);\n}\n\nfunction generateRandomColor(): string {\n  return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`;\n}\n\nfunction parseHexColor(hex: string): [number, number, number] {\n  return [\n    parseInt(hex.substring(0, 2), 16),\n    parseInt(hex.substring(2, 4), 16),\n    parseInt(hex.substring(4, 6), 16),\n  ];\n}\n\nfunction getColorFast(\n  midPoint: number,\n  startRGB: [number, number, number],\n  endRGB: [number, number, number],\n  min: number,\n  max: number\n): string {\n  function interp(start: number, end: number) {\n    const val = Math.round(((end - start) / (max - min)) * (midPoint - min) + start);\n    return val < 16 ? '0' + val.toString(16) : val.toString(16);\n  }\n  return (\n    '#' +\n    interp(startRGB[0], endRGB[0]) +\n    interp(startRGB[1], endRGB[1]) +\n    interp(startRGB[2], endRGB[2])\n  );\n}\n\nfunction generateGradient(colors: string[] = [], numberOfColors: number = 10): string[] {\n  if (!Number.isInteger(numberOfColors) || numberOfColors < 0) {\n    throw new RangeError('Number of colors should be a non-negative integer');\n  }\n\n  if (!colors.length) {\n    colors.push(generateRandomColor());\n  }\n\n  if (colors.length === 1) {\n    const onlyColor = colors.at(0);\n    colors.push(generateComplementary(onlyColor!));\n  }\n\n  colors.forEach(color => {\n    if (!isColorValid(color)) {\n      throw new Error(`Invalid color: ${color}`);\n    }\n  });\n\n  // Special case: exactly two colors and two steps, just return them\n  if (colors.length === 2 && numberOfColors === 2) {\n    return [colors[0]!, colors[1]!];\n  }\n\n  const gradientArray: string[] = new Array(numberOfColors);\n  const increment = Math.ceil(numberOfColors / (colors.length - 1));\n  let currentIndex = 0;\n\n  for (let i = 0; i < colors.length - 1; i++) {\n    const startHex = getHexColor(colors[i]!);\n    const endHex = getHexColor(colors[i + 1]!);\n    const startRGB = parseHexColor(startHex);\n    const endRGB = parseHexColor(endHex);\n    const min = increment * i;\n    const max = increment * (i + 1);\n\n    const start = min === 0 ? 1 : min;\n    const end = max === numberOfColors ? max + 1 : max;\n\n    for (let midPoint = start; midPoint < end; midPoint++) {\n      gradientArray[currentIndex] = getColorFast(midPoint, startRGB, endRGB, min, max);\n      currentIndex++;\n    }\n  }\n\n  return gradientArray;\n}\n\nexport { generateGradient };"
+        ],
+        "sourceRoot": ""
+      }
+    }
+  }
+}

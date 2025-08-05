@@ -35,6 +35,12 @@ tap.test('It generates a gradient', (t) => {
     sub.end();
   });
 
+  t.test('only two colors requested, return them', (sub) => {
+    const colors = ['#000000', '#ffffff'];
+    sub.same(generateGradient(colors, 2), colors);
+    sub.end();
+  });
+
   t.test('It throws correct excpetions', (sub) => {
     sub.throws(() => generateGradient([], -1), RangeError('Number of colors should be a non-negative integer'));
     sub.throws(() => generateGradient([], NaN), RangeError('Number of colors should be a non-negative integer'));
