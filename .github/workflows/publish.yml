@@ -14,9 +14,6 @@ jobs:
           node-version: 22.x
           cache: "pnpm"
           registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 10 # or your preferred pnpm version
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
       - run: pnpm publish
