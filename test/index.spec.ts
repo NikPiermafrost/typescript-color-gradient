@@ -17,7 +17,7 @@ tap.test('It generates a gradient', (t) => {
   });
 
   t.test('It generates a gradient from more colors', (sub) => {
-    sub.throws(() => generateGradient(['#000000', 'ff00ff']), Error('Invalid color: ff00ff'));
+    sub.throws(() => generateGradient(['#000000', 'ff00ff']), Error('Invalid color format: ff00ff'));
     sub.end();
   });
 
@@ -44,10 +44,10 @@ tap.test('It generates a gradient', (t) => {
   t.test('It throws correct excpetions', (sub) => {
     sub.throws(() => generateGradient([], -1), RangeError('Number of colors should be a non-negative integer'));
     sub.throws(() => generateGradient([], NaN), RangeError('Number of colors should be a non-negative integer'));
-    sub.throws(() => generateGradient(['Mario']), Error('Invalid color: Mario'));
-    sub.throws(() => generateGradient(['Pippo']), Error('Invalid color: Pippo'));
-    sub.throws(() => generateGradient(['#Pippo']), Error('Invalid color: #Pippo'));
-    sub.throws(() => generateGradient(['#00fz00']), Error('Invalid color: #00fz00'));
+    sub.throws(() => generateGradient(['Mario']), Error('Invalid color format: Mario'));
+    sub.throws(() => generateGradient(['Pippo']), Error('Invalid color format: Pippo'));
+    sub.throws(() => generateGradient(['#Pippo']), Error('Invalid color format: #Pippo'));
+    sub.throws(() => generateGradient(['#00fz00']), Error('Invalid color format: #00fz00'));
 
     sub.end();
   });
