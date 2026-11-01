@@ -40,4 +40,4 @@ jobs:
             echo "publish=true" >> "$GITHUB_OUTPUT"
           fi
       - if: steps.version.outputs.publish == 'true'
-        run: npm publish
+        run: npm stage publish
