@@ -1,15 +1,15 @@
 {
   "name": "typescript-color-gradient",
-  "version": "4.2.0",
-  "description": "typescript-color-gradient is a typescript native fork of javascript-color-gradient, a lightweight JavaScript library used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.",
+  "version": "5.0.0",
+  "description": "typescript-color-gradient is a typescript native fork of javascript-color-gradient, a lightweight library used to generate an array of color gradients by providing the colors to blend, as well as the total number of colors to return.",
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "lint": "tsc",
-    "test": "tap --tsconfig=./tsconfig.json || echo",
-    "build": "tsup ./src/index.ts --format cjs,esm --dts",
-    "coverage": "nyc tap --tsconfig=./tsconfig.json || echo"
+    "lint": "tsc --noEmit",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"test/**/*.spec.ts\"",
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc",
+    "precoverage": "node -e \"require('node:fs').mkdirSync('coverage',{recursive:true})\"",
+    "coverage": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test --experimental-test-coverage --test-coverage-include=\"src/**\" --test-coverage-lines=100 --test-coverage-branches=100 --test-coverage-functions=100 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=coverage/lcov.info \"test/**/*.spec.ts\""
   },
   "files": [
     "dist",
@@ -38,16 +38,9 @@
   },
   "homepage": "https://nicolapiermattei.net/examples/typescript-color-gradient",
   "devDependencies": {
-    "@tapjs/test": "^2.2.4",
-    "@tapjs/typescript": "^1.4.13",
-    "@types/tap": "^15.0.12",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "eslint": "^8.57.1",
-    "nyc": "^17.1.0",
-    "tap": "^19.2.5",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.2"
+    "@typescript-eslint/eslint-plugin": "8.72.1",
+    "@typescript-eslint/parser": "8.72.1",
+    "eslint": "10.14.0",
+    "typescript": "6.0.3"
   }
 }

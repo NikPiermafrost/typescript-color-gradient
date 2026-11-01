@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "nodenext",
     "rootDir": "./src",
-    "declaration": true,
     "outDir": "./dist",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "noEmit": true,
-    "skipLibCheck": true,
-    "sourceMap": true
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
   "include": [
     "./src/**/*"
-  ],
+  ]
 }

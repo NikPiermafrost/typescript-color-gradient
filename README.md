@@ -2,14 +2,14 @@
 <div>
     <h1>Typescript Color Gradient</h1>
     <h4>All credits to Adrinlol, original creator of this simple yet amazing library</h4>
-    <p>typescript-color-gradient is a typescript native fork of javascript-color-gradient, a lightweight JavaScript library used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints.</p>
+    <p>typescript-color-gradient is a typescript native fork of javascript-color-gradient, a lightweight library used to generate an array of color gradients by providing the colors to blend, as well as the total number of colors to return.</p>
     <a href="https://github.com/Adrinlol/javascript-color-gradient" style="font-size: xl">For the original creator of the library, this is the repository</a>
 </div>
 <br />
 
 [![Package Quality](https://packagequality.com/badge/typescript-color-gradient.png)](https://packagequality.com/#?package=typescript-color-gradient)
 
-![MIT License](https://img.shields.io/npm/l/javascript-color-gradient) 
+![MIT License](https://img.shields.io/npm/l/typescript-color-gradient) 
 
 ## Installation
 
@@ -19,16 +19,16 @@ For Node.js: Install the `typescript-color-gradient` npm module:
 npm install typescript-color-gradient
 ```
 
-Then import the module into your JavaScript:
+Then import it into your TypeScript or JavaScript code:
 
 ```typescript
-import { generateGradient } from  from "typescript-color-gradient";
+import { generateGradient } from "typescript-color-gradient";
 ```
 
 ## Usage
 Generate a random gradient
 ```typescript
-import { generateGradient } from  from "typescript-color-gradient";
+import { generateGradient } from "typescript-color-gradient";
 
 const gradientArray = generateGradient();
 
@@ -37,10 +37,10 @@ console.log(gradientArray);
 ```
 
 
-Using 1 colors and default (10) midpoints to generate an array of hex color values:
+Using 1 color and the default number of colors (10) to generate an array of hex color values:
 
 ```typescript
-import { generateGradient } from  from "typescript-color-gradient";
+import { generateGradient } from "typescript-color-gradient";
 
 const gradientArray = generateGradient(["#3F2CAF"]);
 
@@ -48,26 +48,26 @@ console.log(gradientArray);
 // [... a gradient with 10 colors starting by the selected color and his complementary hex string value]
 ```
 
-Using 2 colors and default (10) midpoints to generate an array of hex color values:
+Using 2 colors and the default number of colors (10) to generate an array of hex color values:
 
 ```typescript
-import { generateGradient } from  from "typescript-color-gradient";
+import { generateGradient } from "typescript-color-gradient";
 
 const gradientArray = generateGradient(["#3F2CAF", "#e9446a"]);
 
 console.log(gradientArray);
-// ["#502ea8", "#6131a1", "#72339a", "#833693", "#94388d", "#a53a86", "#b63d7f", "#c73f78", "#d84271", "#e9446a"]
+// ["#3f2caf", "#522fa7", "#6531a0", "#783498", "#8b3790", "#9d3989", "#b03c81", "#c33f79", "#d64172", "#e9446a"]
 ```
 
-Using 4 colors and 20 midpoints to generate an array of hex color values :
+Using 4 colors and 20 total colors to generate an array of hex color values:
 
-```javascript
-import { generateGradient } from  from "typescript-color-gradient";
+```typescript
+import { generateGradient } from "typescript-color-gradient";
 
 const gradientArray = generateGradient(["#3F2CAF", "#e9446a", "#edc988", "#607D8B"], 20);
 
 console.log(gradientArray);
-// ["#5930a5", "#72339a", "#8c3790", "#a53a86", "#bf3e7b", "#d84271", "#e94b6c", "#ea5f70", "#ea7375", "#eb8779", …]
+// ["#3f2caf", "#5a30a4", "#753499", "#90378e", "#aa3b83", "#c53f79", "#e0436e", "#e9526d", "#ea6772", "#eb7c77", …]
 ```
 
 ## Migrating to V4
@@ -86,7 +86,7 @@ console.log(gradientArray);
 
 to
 ```javascript
-import { generateGradient } from  from "typescript-color-gradient";
+import { generateGradient } from "typescript-color-gradient";
 
 const gradientArray = generateGradient(["#3F2CAF", "#e9446a", "#edc988", "#607D8B"], 20);
 

@@ -1,30 +1,5 @@
-function toHex(c: number): string {
-  const hex = Math.round(c).toString(16);
-  return hex.length === 1 ? '0' + hex : hex;
-}
-
-function parseColorToRgb(hex: string): [number, number, number] {
-  const cleanHex = hex.replace('#', '');
-  const bigint = parseInt(cleanHex, 16);
-  return [
-    (bigint >> 16) & 255, // R
-    (bigint >> 8) & 255,  // G
-    bigint & 255          // B
-  ];
-}
-
-function generateComplementary(hex: string): string {
-  const [r, g, b] = parseColorToRgb(hex);
-  return `#${toHex(255 - r)}${toHex(255 - g)}${toHex(255 - b)}`;
-}
-
-function isColorValid(color: string): boolean {
-  return /^#[0-9A-Fa-f]{6}$/.test(color);
-}
-
-function generateRandomColor(): string {
-  return `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`;
-}
+const HEX: string[] = Array.from({ length: 256 }, (_, i) => i.toString(16).padStart(2, '0'));
+const VALID_COLOR = /^#[0-9A-Fa-f]{6}$/;
 
 function generateGradient(colors: string[] = [], numberOfColors: number = 10): string[] {
   if (!Number.isInteger(numberOfColors) || numberOfColors < 0) {
@@ -33,52 +8,49 @@ function generateGradient(colors: string[] = [], numberOfColors: number = 10): s
 
   if (numberOfColors === 0) return [];
 
-  const stopColors = [...colors]; 
+  const stopColors = colors.slice();
 
   if (stopColors.length === 0) {
-    stopColors.push(generateRandomColor());
+    stopColors.push(`#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, '0')}`);
   }
 
   if (stopColors.length === 1) {
-    stopColors.push(generateComplementary(stopColors[0]!));
+    const n = parseInt(stopColors[0]!.replace('#', ''), 16);
+    stopColors.push(`#${HEX[255 - ((n >> 16) & 255)]}${HEX[255 - ((n >> 8) & 255)]}${HEX[255 - (n & 255)]}`);
   }
 
-  stopColors.forEach(color => {
-    if (!isColorValid(color)) {
+  const stopCount = stopColors.length;
+  const rs = new Array<number>(stopCount);
+  const gs = new Array<number>(stopCount);
+  const bs = new Array<number>(stopCount);
+
+  for (let s = 0; s < stopCount; s++) {
+    const color = stopColors[s]!;
+    if (!VALID_COLOR.test(color)) {
       throw new Error(`Invalid color format: ${color}`);
     }
-  });
+    const n = parseInt(color.slice(1), 16);
+    rs[s] = (n >> 16) & 255;
+    gs[s] = (n >> 8) & 255;
+    bs[s] = n & 255;
+  }
 
-  const rgbStops = stopColors.map(parseColorToRgb);
+  if (numberOfColors === 1) return [stopColors[0]!];
 
-  const result: string[] = new Array(numberOfColors);
+  const result = new Array<string>(numberOfColors);
   const lastIndex = numberOfColors - 1;
+  const segmentTotal = stopCount - 1;
+  const segmentStep = 1 / segmentTotal;
 
   for (let i = 0; i < numberOfColors; i++) {
-    if (lastIndex === 0) {
-      result[i] = stopColors[0]!;
-      continue;
-    }
-
     const t = i / lastIndex;
+    const start = Math.min(Math.floor(t * segmentTotal), segmentTotal - 1);
+    const end = start + 1;
+    const localT = (t - (start * segmentStep)) / segmentStep;
 
-    const segmentTotal = rgbStops.length - 1;
-    const segmentIndex = Math.floor(t * segmentTotal);
-    
-    const startStopIndex = Math.min(segmentIndex, segmentTotal - 1);
-    const endStopIndex = startStopIndex + 1;
-
-    const segmentStep = 1 / segmentTotal;
-    const localT = (t - (startStopIndex * segmentStep)) / segmentStep;
-
-    const startRGB = rgbStops[startStopIndex]!;
-    const endRGB = rgbStops[endStopIndex]!;
-
-    const r = startRGB[0] + (endRGB[0] - startRGB[0]) * localT;
-    const g = startRGB[1] + (endRGB[1] - startRGB[1]) * localT;
-    const b = startRGB[2] + (endRGB[2] - startRGB[2]) * localT;
-
-    result[i] = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+    result[i] = `#${HEX[Math.round(rs[start]! + (rs[end]! - rs[start]!) * localT)]}`
+      + `${HEX[Math.round(gs[start]! + (gs[end]! - gs[start]!) * localT)]}`
+      + `${HEX[Math.round(bs[start]! + (bs[end]! - bs[start]!) * localT)]}`;
   }
 
   return result;

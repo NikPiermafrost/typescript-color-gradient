@@ -1,5 +1,6 @@
 node_modules
 dist
 .idea
-.nyc_output
+.tap
 .vscode
+coverage

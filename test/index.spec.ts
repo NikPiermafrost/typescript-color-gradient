@@ -1,56 +1,49 @@
-import { generateGradient } from '../src/index';
-import tap from 'tap';
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import { generateGradient } from '../src/index.ts';
 
-tap.test('It generates a gradient', (t) => {
-  t.test('It generates a gradient from devault value', (sub) => {
-    sub.equal(generateGradient().length, 10);
-  
-    sub.doesNotThrow(() => generateGradient());
-    sub.end();
+describe('It generates a gradient', () => {
+  it('It generates a gradient from devault value', () => {
+    assert.equal(generateGradient().length, 10);
+    assert.doesNotThrow(() => generateGradient());
   });
 
-  t.test('it generates a gradient from one color', (sub) => {
-    sub.equal(generateGradient(['#000000']).length, 10);
-
-    sub.doesNotThrow(() => generateGradient(['#000000']));
-    sub.end();
+  it('it generates a gradient from one color', () => {
+    assert.equal(generateGradient(['#000000']).length, 10);
+    assert.doesNotThrow(() => generateGradient(['#000000']));
   });
 
-  t.test('It generates a gradient from more colors', (sub) => {
-    sub.throws(() => generateGradient(['#000000', 'ff00ff']), Error('Invalid color format: ff00ff'));
-    sub.end();
+  it('It generates a gradient from more colors', () => {
+    assert.throws(() => generateGradient(['#000000', 'ff00ff']), new Error('Invalid color format: ff00ff'));
   });
 
-  t.test('it generates a gradient of 20 elements', (sub) => {
-    sub.equal(generateGradient([], 20).length, 20);
-
-    sub.doesNotThrow(() => generateGradient([], 20));
-    sub.end();
+  it('it generates a gradient of 20 elements', () => {
+    assert.equal(generateGradient([], 20).length, 20);
+    assert.doesNotThrow(() => generateGradient([], 20));
   });
 
-  t.test('It generates a gradient from three colors and 25 elements', (sub) => {
-    sub.equal(generateGradient(['#000000', '#ffffff', '#ff0000'], 25).length, 25);
-
-    sub.doesNotThrow(() => generateGradient(['#000000', '#ffffff', '#ff0000'], 25));
-    sub.end();
+  it('It generates a gradient from three colors and 25 elements', () => {
+    assert.equal(generateGradient(['#000000', '#ffffff', '#ff0000'], 25).length, 25);
+    assert.doesNotThrow(() => generateGradient(['#000000', '#ffffff', '#ff0000'], 25));
   });
 
-  t.test('only two colors requested, return them', (sub) => {
+  it('only two colors requested, return them', () => {
     const colors = ['#000000', '#ffffff'];
-    sub.same(generateGradient(colors, 2), colors);
-    sub.end();
+    assert.deepEqual(generateGradient(colors, 2), colors);
   });
 
-  t.test('It throws correct excpetions', (sub) => {
-    sub.throws(() => generateGradient([], -1), RangeError('Number of colors should be a non-negative integer'));
-    sub.throws(() => generateGradient([], NaN), RangeError('Number of colors should be a non-negative integer'));
-    sub.throws(() => generateGradient(['Mario']), Error('Invalid color format: Mario'));
-    sub.throws(() => generateGradient(['Pippo']), Error('Invalid color format: Pippo'));
-    sub.throws(() => generateGradient(['#Pippo']), Error('Invalid color format: #Pippo'));
-    sub.throws(() => generateGradient(['#00fz00']), Error('Invalid color format: #00fz00'));
-
-    sub.end();
+  it('one color requested returns the first stop, zero returns none', () => {
+    assert.deepEqual(generateGradient(['#ABCDEF', '#000000'], 1), ['#ABCDEF']);
+    assert.deepEqual(generateGradient(['#ABCDEF'], 0), []);
   });
 
-  t.endAll();
+  it('It throws correct excpetions', () => {
+    const rangeError = new RangeError('Number of colors should be a non-negative integer');
+    assert.throws(() => generateGradient([], -1), rangeError);
+    assert.throws(() => generateGradient([], NaN), rangeError);
+    assert.throws(() => generateGradient(['Mario']), new Error('Invalid color format: Mario'));
+    assert.throws(() => generateGradient(['Pippo']), new Error('Invalid color format: Pippo'));
+    assert.throws(() => generateGradient(['#Pippo']), new Error('Invalid color format: #Pippo'));
+    assert.throws(() => generateGradient(['#00fz00']), new Error('Invalid color format: #00fz00'));
+  });
 });

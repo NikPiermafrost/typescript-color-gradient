@@ -4,28 +4,40 @@ on:
     branches:
       - "main"
 
+permissions:
+  contents: read
+
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
-      
-      - uses: pnpm/action-setup@v2
+      - uses: actions/checkout@6
         with:
-          version: 10
-          
-      - uses: actions/setup-node@v3
+          persist-credentials: false
+      - uses: actions/setup-node@6
         with:
-          node-version: 24.x
-          cache: "pnpm"
-          registry-url: 'https://registry.npmjs.org'
-          
-      - run: pnpm install --frozen-lockfile
-      
-      - run: pnpm run build
-      
-      - run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          node-version: 26.x
+          registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm run coverage
+      - run: npm run build
+      - name: Check if this version is already published
+        id: version
+        run: |
+          name=$(node -p "require('./package.json').name")
+          version=$(node -p "require('./package.json').version")
+          if [ "$(npm view "$name@$version" version 2>/dev/null)" = "$version" ]; then
+            echo "$name@$version is already on npm, skipping publish"
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.version.outputs.publish == 'true'
+        run: npm publish
